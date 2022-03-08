@@ -1,3 +1,82 @@
+import sys as system
+import math
+
+
+# # 1 ZADANIE
+#
+# sportowcy=['Pilka nozna','Trojboj silowy','siatkowka','rzut dyskiem','szachy']
+# sportowcy.reverse()
+# sportowcy.append('koszykowka')
+# sportowcy.append('rzut oszczepem')
+# print(sportowcy)
+#
+# # 2 ZADANIE
+# słownik={'aleja':'al.','ciąg dalszy':'cd.','doktor':'dr','plac':'pl.','strona':'str'}
+#
+# # 3 ZADANIE
+# słownik2={'CD PROJECT':'Wiedzmin','Rockstar':'Grand Theft Auto: San Andreas','Cyanide':'Loki',' Titus Interactive':'Kangurek Kao'}
+# i=0
+# for x in słownik2:
+#     i += 1
+# print(i)
+#
+# # 4 ZADANIE
+#
+# z=input("Wpisz zdanie: ")
+# print(z.count("a"))
+#
+# 5 ZADANIE
+#
+# a = system.stdin.readline()
+# b = system.stdin.readline()
+# c = system.stdin.readline()
+# w = int(a) ** int(b) + int(c)
+# system.stdout.write(str(w))
+#
+# 6 ZADANIE
+#
+# a=int(input('Podaj 1 liczbe: '))
+# b=int(input('Podaj 2 liczbe: '))
+# c=int(input('Podaj 3 liczbe: '))
+#
+# if (a>b)&(a>c):
+#     print('1 liczba jest najwieksza')
+# elif (b>a)&(b>c):
+#     print('2 liczba jest najwieksza')
+# else:
+#     print('3 liczba jest najwieksza')
+#
+# 7 ZADANIE
+#
+#
+# lista=[1,23,13,1.3,12,1.9]
+#
+# for x in lista:
+#     print(x*x)
+#
+# 8 ZADANIE
+#
+# lista = []
+#
+# l = 1
+#
+# while len(lista) < 10:
+#     if l % 2 == 0:
+#         lista.append(l)
+#     l += 1
+#
+# print(lista)
+
+# 9 ZADANIE
+
+a = float(input("wpisz liczbe: "))
+try:
+    print(math.sqrt(a))
+except ValueError:
+    print("blad, liczba ujemna")
+
+
+
 # a=int(input("podaj a:"))
 # b=int(input("podaj b:"))
 # if a==b:
@@ -95,25 +174,26 @@
 # except ValueError:
 #     print("NIE WCZYTANO LICZBY CALKOWITEJ")
 
-lista=['a',5,5.5,[1,2,3],'hg']
-słownik={1:40,'a':'b',4:50}
+# lista=['a',5,5.5,[1,2,3],'hg']
+# słownik={1:40,'a':'b',4:50}
+#
+# print(słownik[1])
+#
+# słownik['30k']=[3,0,'k']
+#
+# print(słownik['30k'])
+#
+# słownik[1]=słownik[1]-5
+#
+# print(słownik)
+#
+# słownik.pop('a')
+# lista.append('xd')
+# lista.insert(2, 22)
+# lista.reverse()
+# lista.remove('a')
+# print(lista)
+# print(lista.index(5))
+# print(słownik)
+# print(lista)
 
-print(słownik[1])
-
-słownik['30k']=[3,0,'k']
-
-print(słownik['30k'])
-
-słownik[1]=słownik[1]-5
-
-print(słownik)
-
-słownik.pop('a')
-lista.append('xd')
-lista.insert(2, 22)
-lista.reverse()
-lista.remove('a')
-print(lista)
-print(lista.index(5))
-print(słownik)
-print(lista)
