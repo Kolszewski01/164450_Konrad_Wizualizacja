@@ -197,26 +197,4 @@
 # # print(słownik)
 # # print(lista)
 #
-
-# a=1
-# b=4
-# ile=10
-# def ciag (* liczby):
-#     if len(liczby)==0:
-#         return 0
-#     else:
-#         suma=0
-#     for a in liczby:
-#         a *=b
-#     return suma
-#
-# print(ciag(ile))
-
-def to_lubie(** rzeczy):
-    for cos in rzeczy:
-        print("To jest")
-        print(cos)
-        print(" co lubie ")
-        print(rzeczy[cos])
-
-to_lubie(slodycze="czekolada",rozrywka=['gry','filmy'])
+cze="czekolada",rozrywka=['gry','filmy'])
