@@ -96,7 +96,7 @@ class Ciagi_Arytmetyczne:
         self.n1 = n1
         self.r = r
         self.n = n
-        self.all = [self.n1 + self.r * (x - 1) for x in range(1, self.n + 1)]
+        self.all = [n1 + r * (x - 1) for x in range(1, n + 1)]
 
     def policz_sume(self):
         return sum(self.all)
