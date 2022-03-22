@@ -78,50 +78,84 @@ import sys
 
 # ZADANIE 5
 
-class Ciagi_Arytmetyczne:
+# class Ciagi_Arytmetyczne:
+#
+#     def __init__(self, n1, r, n):
+#         self.n1 = n1
+#         self.r = r
+#         self.n = n
+#         self.all = [n1+r*(x-1) for x in range(1, n+1)]
+#
+#     def wyswietl_dane(self):
+#         print(self.all)
+#
+#     def pobierz_elementy(self, *all):
+#         self.all = [x for x in all]
+#
+#     def pobierz_parametry(self, n1, r, n):
+#         self.n1 = n1
+#         self.r = r
+#         self.n = n
+#         self.all = [n1 + r * (x - 1) for x in range(1, n + 1)]
+#
+#     def policz_sume(self):
+#         return sum(self.all)
+#
+#     def policz_elementy(self):
+#         return ((self.all[-1]-self.n1)/self.r)+1
+#
+#
+# np = Ciagi_Arytmetyczne(3, 4, 1)
+#
+# np.wyswietl_dane()
+#
+# np.pobierz_elementy(55, 2, 30)
+#
+# np.wyswietl_dane()
+#
+# np.pobierz_parametry(6, 2, 3)
+#
+# np.wyswietl_dane()
+#
+# print(np.policz_sume())
+#
+# print(np.policz_elementy())
 
-    def __init__(self, n1, r, n):
-        self.n1 = n1
-        self.r = r
-        self.n = n
-        self.all = [n1+r*(x-1) for x in range(1, n+1)]
-
-    def wyswietl_dane(self):
-        print(self.all)
-
-    def pobierz_elementy(self, *all):
-        self.all = [x for x in all]
-
-    def pobierz_parametry(self, n1, r, n):
-        self.n1 = n1
-        self.r = r
-        self.n = n
-        self.all = [n1 + r * (x - 1) for x in range(1, n + 1)]
-
-    def policz_sume(self):
-        return sum(self.all)
-
-    def policz_elementy(self):
-        return ((self.all[-1]-self.n1)/self.r)+1
 
 
-np = Ciagi_Arytmetyczne(3, 4, 1)
+# ZADANIE 6
 
-np.wyswietl_dane()
+class robaczek:
 
-np.pobierz_elementy(55, 2, 30)
+    def __init__(self, x, y, krok):
+        self.x=x
+        self.y=y
+        self.krok=krok
 
-np.wyswietl_dane()
+    def idz_w_gore(self, ile_krokow):
+        self.y+= ile_krokow*self.krok
 
-np.pobierz_parametry(6, 2, 3)
+    def idz_w_dol(self,ile_krokow):
+        self.y += ile_krokow*self.krok
 
-np.wyswietl_dane()
+    def idz_w_lewo(self, ile_krokow):
+        self.x +=  ile_krokow*self.krok
 
-print(np.policz_sume())
+    def idz_w_prawo(self, ile_krokow):
+        self.x +=  ile_krokow*self.krok
 
-print(np.policz_elementy())
+    def pokaz_gdzie_jestes(self):
+        print("x="+str(self.x))
+        print("y="+str(self.y))
 
 
+
+xd=robaczek(0,0,5)
+xd.idz_w_prawo(7)
+xd.idz_w_lewo(3)
+xd.idz_w_dol(2)
+xd.idz_w_gore(5)
+xd.pokaz_gdzie_jestes()
 
 # class Ksztalty:
 #     __xd__="xyz"
