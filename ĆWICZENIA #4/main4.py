@@ -112,33 +112,40 @@ class Ciagi_Arytmetyczne:
         self.n1 = n1
         self.r = r
         self.n = n
-        self.c = [self.n1+self.r*(x-1) for x in range(1, self.n+1)]
+        self.all = [n1+r*(x-1) for x in range(1, n+1)]
 
     def wyswietl_dane(self):
-        print(self.c)
+        print(self.all)
 
-    def pobierz_elementy(self, *c):
-        self.c = [x for x in c]
+    def pobierz_elementy(self, *all):
+        self.all = [x for x in all]
 
     def pobierz_parametry(self, n1, r, ilosc):
         self.n1 = n1
         self.r = r
         self.n = ilosc
-        self.c = [self.n1 + self.r * (x - 1) for x in range(1, self.n + 1)]
+        self.all = [self.n1 + self.r * (x - 1) for x in range(1, self.n + 1)]
 
     def policz_sume(self):
-        return sum(self.c)
+        return sum(self.all)
 
     def policz_elementy(self):
-        return ((self.c[-1]-self.n1)/self.r)+1
+        return ((self.all[-1]-self.n1)/self.r)+1
 
 
 np = Ciagi_Arytmetyczne(3, 4, 1)
+
 np.wyswietl_dane()
+
 np.pobierz_elementy(55, 2, 30)
+
 np.wyswietl_dane()
+
 np.pobierz_parametry(6, 2, 3)
+
 np.wyswietl_dane()
+
 print(np.policz_sume())
+
 print(np.policz_elementy())
 
