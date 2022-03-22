@@ -120,10 +120,10 @@ class Ciagi_Arytmetyczne:
     def pobierz_elementy(self, *all):
         self.all = [x for x in all]
 
-    def pobierz_parametry(self, n1, r, ilosc):
+    def pobierz_parametry(self, n1, r, n):
         self.n1 = n1
         self.r = r
-        self.n = ilosc
+        self.n = n
         self.all = [self.n1 + self.r * (x - 1) for x in range(1, self.n + 1)]
 
     def policz_sume(self):
