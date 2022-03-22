@@ -1,34 +1,6 @@
 import sys
 
-# class Ksztalty:
-#     __xd__="xyz"
-#     def __init__(self, x, y):
-#         self.x=x
-#         self.y=y
-#         self.opis = "To będzie klasa dla ogólnych kształtów"
-#     def pole(self):
-#         return self.x * self.y
-#     def obwod(self):
-#         return 2* self.x + 2* self.y
-#     def dodaj_opis(self, text):
-#         self.opis=text
-#     def skalowanie(self,czynnik):
-#         self.x=self.x * czynnik
-#         self.y=self.y * czynnik
-#
-# prostokat=Ksztalty(10,30)
-#
-# print(prostokat.pole())
-# print(prostokat.obwod())
-# prostokat.dodaj_opis("Prostokat")
-# print(prostokat.opis)
-# prostokat.skalowanie(0.5)
-# print(prostokat.x)
-#
-# prostokat.__xd__="nana"
-# print(prostokat.__xd__)
-#
-#
+
 
 #ZADANIE 1
 
@@ -149,3 +121,34 @@ print(np.policz_sume())
 
 print(np.policz_elementy())
 
+
+
+# class Ksztalty:
+#     __xd__="xyz"
+#     def __init__(self, x, y):
+#         self.x=x
+#         self.y=y
+#         self.opis = "To będzie klasa dla ogólnych kształtów"
+#     def pole(self):
+#         return self.x * self.y
+#     def obwod(self):
+#         return 2* self.x + 2* self.y
+#     def dodaj_opis(self, text):
+#         self.opis=text
+#     def skalowanie(self,czynnik):
+#         self.x=self.x * czynnik
+#         self.y=self.y * czynnik
+#
+# prostokat=Ksztalty(10,30)
+#
+# print(prostokat.pole())
+# print(prostokat.obwod())
+# prostokat.dodaj_opis("Prostokat")
+# print(prostokat.opis)
+# prostokat.skalowanie(0.5)
+# print(prostokat.x)
+#
+# prostokat.__xd__="nana"
+# print(prostokat.__xd__)
+#
+#
