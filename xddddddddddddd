@@ -1,0 +1,9 @@
+sns.set()
+df=pd.read_csv('iris.data',header=0,sep=',',decimal='.')
+
+
+sns.relplot(data=df, x=df.index, y='sepal width',
+            kind='scatter',
+            color='red',
+            col='class')
+plt.show()
