@@ -1,0 +1,256 @@
+cycler==0.11.0
+et-xmlfile==1.1.0
+fonttools==4.29.1
+kiwisolver==1.3.2
+matplotlib==3.5.1
+numpy==1.22.2
+openpyxl==3.0.9
+packaging==21.3
+pandas==1.4.0
+Pillow==9.0.1
+pyparsing==3.0.7
+python-dateutil==2.8.2
+pytz==2021.3
+scipy==1.7.3
+seaborn==0.11.2
+six==1.16.0
+
+
+
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+#zadanie pierwsze
+
+x=np.arange(6)
+y=np.array([35,37,20,22,35,32])
+plt.title("Wykres zmian X i Y")
+plt.bar(x,y, color='green', label="X")
+y2=np.array([-13,-10,-13,-20,-18,-24])
+plt.bar(x,y2, color='red', label="Y")
+a=["Styczeń","Luty","Marzec","Kwiecień","Maj","Czerwiec"]
+b=[0,1,2,3,4,5]
+plt.xticks(b,a, rotation=35)
+plt.legend()
+plt.savefig("zadanie1.jpg")
+plt.show()
+
+#zadanie drugie
+
+df=pd.read_excel("uczniowie6.xlsx")
+print(df)
+r=df["Rok"]
+w=df["Wartość"]
+plt.plot(r,w, color="green", linewidth=3)
+plt.title("Wykaz dla uczniów poszczególnych wartości w Polsce")
+plt.xlabel("Lata")
+plt.ylabel("Wartości")
+plt.annotate(xy=[2015,620000], text="18:56")
+plt.xticks(r, r)
+plt.tight_layout
+plt.grid()
+plt.savefig("zad2.jpg")
+plt.show()
+
+#zadanie3
+
+dane=pd.read_excel("rod6.xlsx", header=None).T
+dane2=dane.iloc[1:,:]
+dane2.columns=dane.iloc[0,:]
+dane2["Rok"]=pd.Series(dane2["Rok"], dtype=int)
+dane2["Wartosc"]=pd.Series(dane2["Wartosc"], dtype=int)
+dzialki=dane2[dane2["Rodzaje terenu"]=="działki"] ## FILTROWANIE
+dp=dzialki[dzialki["Ogrody"]=="powierzchnia"]
+plt.barh(dp["Rok"],dp["Wartosc"])
+plt.yticks(dp["Rok"])
+plt.show()
+
+/////////////////////////////////////////////////////////
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+#pillow 9.2.0
+
+#1 Zadanie
+
+# x=np.arange(6)
+# y=np.array([27,38,40,24,3,8])
+# plt.barh(x,y, color='tab:pink', label="A")
+# y2=np.array([-50,-25,-29,-43,-20,-41])
+# plt.barh(x,y2, color='tab:cyan', label="B")
+# plt.title("Wykres zmian A i B")
+# plt.legend()
+# m=["Styczeń","Luty","Marzec","Kwiecień","Maj","Czerwiec"]
+# plt.yticks(x,m, rotation=45)
+# plt.savefig("zad1.png")
+# plt.show()
+
+#2 zadanie
+
+# dane=pd.read_excel('produkcja1.xlsx')
+#
+# x=dane["Rok"]
+# y=dane['Wartość']
+# plt.title("Produkcja w Polsce")
+# plt.scatter(x,y, color='darkgreen', marker='^')
+# a=[1200000,1400000,1600000]
+# b=["1.2 mln","1.4 mln","1.6 mln"]
+# plt.yticks(a,b)
+# plt.xlabel("Rok")
+# plt.ylabel("Wartość")
+# plt.annotate(xy=[2018,1200000], text="16:30")
+# plt.grid()
+# plt.savefig("wykres.pdf")
+# plt.show()
+
+#3 zadanie
+
+dane=pd.read_csv('sport1.csv',sep='_')
+
+m=dane[dane['Płeć']=="M"]
+k=dane[dane['Płeć']=="K"]
+s=m["Sport"]
+
+plt.subplot(1,3,1)
+plt.title("Mężczyzni")
+plt.pie(m["Popularność"],autopct='% 1.0f%%', labels=s, startangle=30)
+
+plt.subplot(1,3,3)
+plt.title("Kobiety")
+plt.pie(k["Popularność"],autopct='% 1.0f%%', labels=s, startangle=30)
+plt.tight_layout()
+plt.savefig("zadanie3.pdf")
+plt.show()
+
+
+
+//////////////////////////////////////////////////////////////////////
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+#1 zadanie
+
+fig, ax1 = plt.subplots()
+x = np.arange(0,10.0,0.01)
+y=x+4
+ax1.plot(x,y, linestyle='dashed', color='orange',label='y=x+4')
+ax1.set_title('Wykresy dwóch funkcji liniowych')
+plt.legend()
+plt.grid()
+ax1.set_ylabel('oś pionowa po lewej stronie', color='green')
+ax1.set_xlabel('oś pozioma', color='pink')
+ax2=ax1.twinx()
+y2=-x-6
+ax2.plot(x,y2, linestyle='dashdot', color='brown',label='y=-x-6')
+plt.legend()
+ax2.set_ylabel('oś pionowa po prawej stronie', color='gray')
+fig.tight_layout()
+plt.show()
+plt.savefig("jpg.jpg")
+
+#2 zad
+
+df=pd.read_excel("linieautobusowe10.xlsx")
+print(df)
+
+r=df["Rok"]
+w=df["Wartosc"]
+plt.title("Wartości w poszczególnych latach w Polsce")
+plt.xlabel("Lata")
+plt.ylabel("Wartości (w szt.)")
+plt.scatter(r,w, s=200, color='red')
+plt.grid()
+plt.xticks(r,r)
+plt.tight_layout
+plt.savefig("jpg.jpg")
+plt.show()
+
+#3 zadanie
+
+dane=pd.read_excel("samochody10.xlsx",header=None).T
+dane.columns=["Pojazd","Rok","Wartość"]
+dane["Rok"]=pd.Series(dane["Rok"], dtype=int) ##ZAMIANA WARTOSCI W KOLUMNIE ROK NA INT
+dane["Wartość"]=pd.Series(dane["Wartość"], dtype=int)
+rok17=dane[dane["Rok"]==2017]
+rok18=dane[dane["Rok"]==2018]
+x=np.arange(6) ##ILOSC SłUPKÓW
+
+plt.bar(x-0.165,rok17["Wartość"],width=0.33, label="2017") ## TWORZZENIE SLUPKOW
+plt.bar(x+0.165,rok18["Wartość"],width=0.33, label="2018")
+plt.legend()
+plt.xticks(x,rok17["Pojazd"], rotation=45)
+plt.yticks([0,0.5e7, 1e7, 1.5e7, 2e7],[0,"5mln","10mln","15mln","20mln"])
+
+plt.grid()
+plt.tight_layout()
+plt.savefig("zad3.pdf")
+plt.show()
+
+
+//////////////////////////
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+zadanie 1
+plt.subplot(2,2,1)
+plt.title("Lewa Góra")
+lg=[15.70,25.58,16.86,21.51,12.79,7.56]
+explode = [0, 0.1, 0, 0,0,0]
+colors=['brown','pink','white','green','brown','blue']
+plt.pie(lg, autopct='%1.1f%%',explode=explode, labels=["A","B","C","D","E","F"], colors=colors, startangle=40)
+
+plt.subplot(2,2,4)
+plt.title("Prawa Góra")
+lg=[20.37,17.59,9.72,19.91,15.74,16.67]
+explode = [0, 0.1, 0, 0,0,0]
+plt.pie(lg, autopct='%1.1f%%',explode=explode, labels=["A","B","C","D","E","F"])
+
+
+#zadanie 2
+
+df=pd.read_excel("ceny21.xlsx")
+
+mp=df[df["Rodzaje towarów"]=="mąka pszenna - za 1kg"]
+kj=df[df["Rodzaje towarów"]=="kasza jęczmienna - za 0,5kg"]
+
+rok=kj["Rok"]
+
+plt.scatter(rok,mp["Wartość"], color='green', marker='^', label='Maka pszenna')
+plt.scatter(rok,kj["Wartość"],color='red',marker=7,label='Kasza jeczmienna')
+plt.legend()
+plt.grid()
+plt.tight_layout()
+plt.show()
+
+
+#zadanie 3
+
+df=pd.read_csv('wynagrodzenia21.csv',header=0,sep=';',decimal=',')
+df2=df.loc[:1,['Województwo','2010','2011','2012','2013']].copy().T
+
+df3=df2.iloc[1:,:]
+df3.columns=df2.iloc[0,:]
+
+x=np.arange(4)
+plt.bar(x-0.165,df3["DOLNOŚLĄSKIE"],width=0.33, label="DOLNOŚLĄSKIE") ## TWORZZENIE SLUPKOW
+plt.bar(x+0.165,df3["KUJAWSKO-POMORSKIE"],width=0.33, label="KUJAWSKO-POMORSKIE")
+plt.legend()
+plt.xticks([0.0,1.0,2.0,3.0],[2010,2011,2012,2013])
+
+
+
+
+
+
+
